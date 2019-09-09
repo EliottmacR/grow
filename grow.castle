@@ -1,0 +1,7 @@
+main: game/main.lua
+title: Grow!
+owner: spaceling
+primaryColor: 000000
+dimensions: full
+description: Make things grow !
+
