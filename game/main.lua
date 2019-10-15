@@ -15,12 +15,15 @@ end
 --
 
 function love.load()
-  GW = 416*2 - 32 * 4 
+  GW = 416  - 32 * 4 
   GH = GW * 2/3 
   zoom = 3
+  time_since_launch = 0
+  
   init_sugar("!Grow!", GW, GH, zoom )
   screen_render_integer_scale(false)    
   set_frame_waiting(30)
+  init_controls()
   init_palette()
   use_palette(_sugar_palette)
   
@@ -32,12 +35,11 @@ function love.load()
   
   love.math.setRandomSeed(os.time())
   love.mouse.setVisible(true)
-  
   init_game()
-  init_controls()
 end
 
 function love.update()
+  time_since_launch = time_since_launch + dt()
   update_game()
 end
 
@@ -60,8 +62,19 @@ function init_controls()
   register_btn("down"    , 0, {input_id("keyboard", "down")   ,
                                input_id("keyboard", "s")   })
                                
-  register_btn("left"    , 0, {input_id("keyboard", "up"),
+  register_btn("left"    , 0, {input_id("keyboard", "left"),
                                input_id("keyboard", "q")   })
+                               
+  ---------------------------------
+  
+  register_btn("action"    , 0, {input_id("keyboard", "f"),
+                                 input_id("keyboard", "space") })
+                                 
+  register_btn("a"    , 0,  input_id("keyboard", "a"))
+  register_btn("e"    , 0,  input_id("keyboard", "e"))
+  
+  -- register_btn("previous"    , 0, input_id("keyboard", "lalt"))
+  register_btn("change_tool"    , 0, input_id("keyboard", "lshift"))
 end
 
 

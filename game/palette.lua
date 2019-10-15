@@ -35,6 +35,26 @@ function init_palette()
   add_color(0xc2a9ef, "mauve")
   add_color(0x927fb4, "smauve")
   
+  add_color(0xa66c0e, "brown")
+  add_color(0x89694c, "dbrown")
+  
+  add_color(0xbc804a, "wood")
+  add_color(0x523608, "dwood")
+  
+  add_color(0x9b6a3f, "ldirt")
+  
+  add_color(0xa1db72, "lgreen")
+  add_color(0x79a457, "slgreen")
+  add_color(0x3c512b, "dlgreen")
+  
+  add_color(0xb3b3b3, "swhite")
+  
+  add_color(0x858585, "metal1")
+  add_color(0x6e6e6e, "smetal1")
+  add_color(0x454545, "dmetal1")
+  
+  
+  
 end
 
 function add_color(value, name)
